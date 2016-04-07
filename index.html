@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name = "viewport" content = "width=device-width, initial-scale=1">
+    <title>Revusic</title>
+    <!--stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <!--jQuery-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <!--jQuery Mobile-->
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+    <!--Javascript-->
+    <script src="js/database.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/facade.js"></script>
+    <script src="js/revusicDAL.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <!--PHP-->
+    <script src="php/dbConnect.php"></script>
+</head>
+<body>
+<!--SIGN IN PAGE------------------------------------------->
+<div data-role="page" id="signInPage" data-theme="b">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+    </header>
+    <section data-role="content">
+    <form id="signInForm" name="signInForm">
+        <h4>Existing Users</h4>
+
+        <input type="text" id="username" name="username" placeholder="username" data-clear-btn="true">
+
+        <input type="password" id="password" name="password" placeholder="password" data-clear-btn="true">
+        <h4><a id="btnSignIn" name="btnSignIn" data-role="button" data-theme="b">Sign In</a></h4>
+
+        <h4>New Users</h4>
+        <input type="text" id="email" name="email" placeholder="email address" data-clear-btn="true">
+        <h4><a href="#createAccountPage" data-role="button" data-theme="b">Create Account</a></h4>
+    </form>
+    </section>
+    <footer data-role="footer" data-position="fixed">
+
+    </footer>
+</div>
+
+<!--CREATE ACCOUNT PAGE------------------------------------------->
+<div data-role="page" id="createAccountPage" data-theme="b">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+    </header>
+    <section data-role="content">
+        <form id = "createAccountForm" name = "createAccountForm">
+            <h4>New User</h4>
+            <input type="text" id="newEmail" name="newEmail" placeholder="email address" data-clear-btn="true">
+            <input type="text" id="newUsername" name="newUsername" placeholder="username" data-clear-btn="true">
+
+            <input type="password" id="newPassword" name="newPassword" placeholder="password" data-clear-btn="true">
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="confirm password" data-clear-btn="true">
+
+            <h4><a data-role="button" data-theme="b" id="btnCreateAccount" name="btnCreateAccount">Create Account</a></h4>
+            <br>
+            <h4>Already have a Revusic account?</h4>
+            <h4><a href="#signInPage" data-role="button" data-theme="b">Go Back</a></h4>
+        </form>
+    </section>
+    <footer data-role="footer" data-position="fixed">
+
+    </footer>
+</div>
+
+<!--MUSIC PAGE------------------------------------------->
+<div data-role="page" id="musicPage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio" class="ui-btn-active ui-state-persist">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment">Social</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section data-role="content" style="text-align: center;">
+
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/185477834&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/201931737&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/172185143&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221384699&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/195400200&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/208833221&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223609324&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/215868989&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/132416757&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/249707492&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175722998&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/225061522&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        <br><br>
+        <iframe width="85%" height="250" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/180595286&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="b" style="width: 90%;">Settings</a></h4>
+    </footer>
+</div>
+
+<!--PROFILE PAGE------------------------------------------->
+<div data-role="page" id="profilePage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user" class="ui-btn-active ui-state-persist">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment">Social</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+
+        <div id="profileShow" name="profileShow">
+            <!--PROFILE AUTOMATICALLY SHOWS HERE-->
+        </div>
+
+        <!--<div id="left" style="width: 40%; float:left;">-->
+            <!--<img src="images/kxng.png" alt="Statik KXNG - Statik Selektah & KXNG Crooked (2016)" style="width: 85%;">-->
+
+        <!--</div>-->
+        <!--<div id="right"style="width: 60%; float:right;">-->
+            <!--<h4>Username's Profile</h4>            -->
+        <!--</div>-->
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#editProfilePage" data-role="button" data-theme="b" style="width: 90%;">Edit Profile</a></h4>
+    </footer>
+</div>
+
+<!--EDIT PROFILE PAGE------------------------------------------->
+<div data-role="page" id="editProfilePage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user" class="ui-btn-active ui-state-persist">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment">Social</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+
+        <label for="editCountry">Country</label>
+        <input type="text" id="editCountry" name="editCountry" placeholder="add country" data-clear-btn="true">
+        <br>
+        <label for="editbio">Bio</label>
+        <textarea id="editBio" cols="30" rows="10" placeholder="add bio"></textarea>
+        <br>
+        <label for="datePicker1">Date of Birth</label>
+        <input type="date" id="datePicker1" name="datePicker1">
+        <br>
+        <label for="filePicker1">Upload Profile Picture</label>
+        <input type="file" id="filePicker1" name="filePicker1">
+
+        <h4><a id="btnUpdateProfile" name="btnUpdateProfile" data-role="button" data-theme="b">Update Profile</a></h4>
+        <br>
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#profilePage" data-role="button" data-theme="b" style="width: 90%;">Return To Profile</a></h4>
+    </footer>
+</div>
+
+<!--REVIEWS PAGE------------------------------------------->
+<div data-role="page" id="reviewsPage" data-theme="b" data-fullscreen="true">
+
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid" class="ui-btn-active ui-state-persist">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment">Social</a></li>
+            </ul>
+        </div>
+
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <input type="text">
+                </td>
+                <td style="font-size:80%; width:7em;">
+                    <input type="submit" value="Search" data-icon="search">
+                </td>
+            </tr>
+        </table>
+    </header>
+
+
+    <section data-role="content" style="margin: 0 auto; text-align: center; align: center;">
+
+        <p>2016</p>
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/kxng.png" alt="Statik KXNG - Statik Selektah & KXNG Crooked (2016)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/malibu.png" alt="Malibu - Anderson .Paak (2016)" style="width: 100%;"></a>
+
+        <p>2015</p>
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/TPAB.png" alt="To Pimp A Butterfly - Kendrick Lamar (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/90059.png" alt="90059 - Jay Rock (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/med.png" alt="Bad Neighbor - MED, Blu & Madlib (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/czarface.png" alt="Every Hero Needs A Villain - Czarface (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/goodam.png" alt="GO:OD AM - Mac Miller (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/lorange.png" alt="The Night Took Us In Like Family - L'Orange & Jeremiah Jae (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/odd.png" alt="The Good Fight - Oddisee (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/gang.png" alt="You Disgust Me - Gangrene (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/soursoul.png" alt="Sour Soul - BADBADNOTGOOD & Ghostface Killah (2015)" style="width: 100%;"></a>
+
+        <a data-role="button" data-theme="none" data-corners="false" data-shadow="false" data-inline="true" href="#"><img src="images/bad.png" alt="B4.DA.$$ - Joey Bada$$ (2015)" style="width: 100%;"></a>
+
+
+
+
+    </section>
+
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="b" style="width: 90%;">Settings</a></h4>
+    </footer>
+
+</div>
+
+<!--SOCIAL PAGE------------------------------------------->
+<div data-role="page" id="socialPage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment"class="ui-btn-active ui-state-persist">Social</a></li>
+            </ul>
+        </div>
+
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <input type="text">
+                </td>
+                <td style="font-size:80%; width:7em;">
+                    <input type="submit" value="Search" data-icon="search">
+                </td>
+            </tr>
+        </table>
+
+    </header>
+    <section data-role="content">
+
+        <a href="#createSocialPostPage" data-role="button" data-theme="b" name="btnCreateSocialPost">Create New Post</a>
+
+        <ul id="listOfPosts" data-role="listview" class="ui-listview-inset">
+            <!--AUTOMATICALLY FILLED FROM post TABLE-->
+        </ul>
+
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="b" style="width: 90%;">Settings</a></h4>
+    </footer>
+</div>
+
+<!--CREATE SOCIAL POST PAGE--------------------------------->
+<div data-role="page" id="createSocialPostPage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment"class="ui-btn-active ui-state-persist">Social</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+
+        <form id="createSocialPostForm" name="createSocialPostForm">
+
+            <h4>NEW SOCIAL POST</h4>
+
+            <label for="postTitle">Title</label>
+            <input type="text" id="postTitle" name="postTitle" placeholder="Title of Social Post" data-clear-btn="true">
+
+            <label for="postContent">Content</label>
+            <textarea id="postContent" name="postContent" cols="30" rows="10" placeholder="Write your Social Post contents here..."></textarea>
+
+            <a data-role="button" data-theme="b" name="btnPostNewSocialPost" id="btnPostNewSocialPost">Post</a>
+
+            <a href="#socialPage" data-role="button" data-theme="b">Cancel</a>
+
+        </form>
+
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="b" style="width: 90%;">Settings</a></h4>
+    </footer>
+</div>
+
+<!--VIEW SOCIAL POST PAGE--------------------------------->
+<div data-role="page" id="viewPostPage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment"class="ui-btn-active ui-state-persist">Social</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+
+        <div id="viewPostDiv" name="viewPostDiv">
+
+            <!--AUTOMATICALLY GETS POST FROM DATABASE-->
+
+        </div>
+        <a data-role="button" data-theme="b">Comment</a>
+        <a href="#socialPage" data-role="button" data-theme="b">Go Back</a>
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="b" style="width: 90%;">Settings</a></h4>
+    </footer>
+</div>
+
+
+<!--EDIT SOCIAL POST PAGE--------------------------------->
+<div data-role="page" id="editPostPage" data-theme="b" data-fullscreen="true">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment"class="ui-btn-active ui-state-persist">Social</a></li>
+            </ul>
+        </div>
+
+    </header>
+    <section data-role="content">
+
+        <p>edit your post..</p>
+        <div id="editPostDiv" name="editPostDiv">
+
+            <!--AUTOMATICALLY GETS POST FROM DATABASE-->
+
+        </div>
+        <a data-role="button" data-theme="b">Comment</a>
+        <a href="#socialPage" data-role="button" data-theme="b">Go Back</a>
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="b" style="width: 90%;">Settings</a></h4>
+    </footer>
+</div>
+
+<!--SETTINGS PAGE------------------------------------------->
+<div data-role="page" id="settingsPage" data-theme="b">
+    <header data-role="header" data-position="fixed">
+        <h1>Revusic</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#musicPage" data-icon="audio">Music</a></li>
+                <li><a href="#profilePage" data-icon="user">Profile</a></li>
+                <li><a href="#reviewsPage" data-icon="grid">Reviews</a></li>
+                <li><a href="#socialPage" data-icon="comment">Social</a></li>
+            </ul>
+        </div>
+    </header>
+    <section data-role="content">
+
+        <a href="#signInPage" data-role="button" data-theme="b">Sign Out</a>
+
+        <a data-role="button" data-theme="b" id="btnClearDB" name="btnClearDB">Clear Database (for testing purposes only)</a>
+
+    </section>
+    <footer data-role="footer" data-position="fixed">
+        <h4><a href="#settingsPage" data-role="button" data-theme="a" style="width: 90%;">Settings</a></h4>
+    </footer>
+</div>
+
+</body>
+</html>
